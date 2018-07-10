@@ -17,15 +17,25 @@ public class MainActivity extends AppCompatActivity {
 
     public void decrement(View view) {
         quantity = quantity - 1;
+        displayQuantity(quantity);
     }
 
-    public void displayQuantity(View view) {
+    public void increment (View view){
+        quantity = quantity + 1;
+        displayQuantity(quantity);
+    }
+
+    public void submitOrder (View view){
+        displayPrice(quantity*5);
+    }
+
+    public void displayQuantity(int numberOrdered) {
         TextView quantityTextView = (TextView) findViewById(R.id.quantity_text_view);
-        quantityTextView.setText("" + quantity);
+        quantityTextView.setText("" + numberOrdered);
     }
 
-    public void displaPrice(View view) {
+    public void displayPrice(int price) {
         TextView orderSummaryTextView = findViewById(R.id.order_summary_text_view);
-        orderSummaryTextView.setText("");
+        orderSummaryTextView.setText("$"+price);
     }
 }
