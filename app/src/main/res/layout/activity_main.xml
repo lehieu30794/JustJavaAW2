@@ -5,11 +5,18 @@
     android:paddingLeft="16dp"
     android:paddingRight="16dp">
 
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:layout_marginTop="16dp"
+        android:hint="Name"
+        android:textSize="36sp" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
-        android:layout_marginTop="16dp"
         android:text="Quantity"
         android:textAllCaps="true"
         android:textColor="#D32F2F"
