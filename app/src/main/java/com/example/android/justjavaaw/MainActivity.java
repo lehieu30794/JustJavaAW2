@@ -20,13 +20,13 @@ public class MainActivity extends AppCompatActivity {
         displayQuantity(quantity);
     }
 
-    public void increment (View view){
+    public void increment(View view) {
         quantity = quantity + 1;
         displayQuantity(quantity);
     }
 
-    public void submitOrder (View view){
-        displayPrice(quantity*5);
+    public void submitOrder(View view) {
+        displayPrice(quantity * 5);
     }
 
     public void displayQuantity(int numberOrdered) {
@@ -36,6 +36,6 @@ public class MainActivity extends AppCompatActivity {
 
     public void displayPrice(int price) {
         TextView orderSummaryTextView = findViewById(R.id.order_summary_text_view);
-        orderSummaryTextView.setText("$"+price);
+        orderSummaryTextView.setText("$" + price);
     }
 }
