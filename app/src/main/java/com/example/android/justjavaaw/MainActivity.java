@@ -33,7 +33,10 @@ public class MainActivity extends AppCompatActivity {
         CheckBox whippedCreamCheckBox = findViewById(R.id.whipped_cream_check_box);
         boolean hasWhippedCream = whippedCreamCheckBox.isChecked();
 
-        displayMessage(hasWhippedCream);
+        CheckBox chocolateCheckBox = findViewById(R.id.chocolate_check_box);
+        boolean hasChocoLate = chocolateCheckBox.isChecked();
+
+        displayMessage(hasWhippedCream, hasChocoLate);
     }
 
     public void displayQuantity(int numberOrdered) {
@@ -55,10 +58,10 @@ public class MainActivity extends AppCompatActivity {
 //        }
 //    }
 
-    public void displayMessage(boolean addWhippedCream) {
+    public void displayMessage(boolean addWhippedCream, boolean addChocolate) {
         String priceMessage = "Name:";
         priceMessage += "\nAdd whipped Cream?" + addWhippedCream;
-        priceMessage += "\nAdd chocolate";
+        priceMessage += "\nAdd chocolate? " + addChocolate;
         priceMessage += "\nQuantity: " + quantity;
         priceMessage += "\nTotal: $";
         priceMessage += "\nThank You";
