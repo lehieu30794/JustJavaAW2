@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
         priceMessage += "\nAdd chocolate? " + addChocolate;
         priceMessage += "\nQuantity: " + quantity;
         priceMessage += "\nTotal: $" + calculatePrice;
-        priceMessage += "\nThank You!";
+        priceMessage += "\n" + getString(R.string.thank_you);
 
         TextView orderSummaryTextView = findViewById(R.id.order_summary_text_view);
         orderSummaryTextView.setText(priceMessage);

@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">JustJavaAW</string>
+
+    <string name="toppings">Toppings</string>
+    <!--Java-->
+    <string name="thank_you">Thank You!</string>
 </resources>
