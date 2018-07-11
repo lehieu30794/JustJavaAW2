@@ -47,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
         quantityTextView.setText("" + numberOrdered);
     }
 
+
     private int calculatePrice(boolean addWhippeedCream, boolean addChocolate) {
         int basePrice = 5;
         if (addWhippeedCream) {
@@ -56,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
             basePrice = basePrice + 2;
         }
         return (basePrice * quantity);
+    }
 
     public void displayMessage(int calculatePrice, boolean addWhippedCream, boolean addChocolate) {
         String priceMessage = "Name:";
