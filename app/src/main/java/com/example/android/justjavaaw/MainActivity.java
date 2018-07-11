@@ -30,14 +30,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void submitOrder(View view) {
-        
+
         CheckBox whippedCreamCheckBox = findViewById(R.id.whipped_cream_check_box);
         boolean hasWhippedCream = whippedCreamCheckBox.isChecked();
 
         CheckBox chocolateCheckBox = findViewById(R.id.chocolate_check_box);
         boolean hasChocoLate = chocolateCheckBox.isChecked();
 
-        displayMessage(hasWhippedCream, hasChocoLate);
+        int calculatePrice = calculatePrice(hasWhippedCream, hasChocoLate);
+
+        displayMessage(calculatePrice, hasWhippedCream, hasChocoLate);
     }
 
     public void displayQuantity(int numberOrdered) {
@@ -45,21 +47,22 @@ public class MainActivity extends AppCompatActivity {
         quantityTextView.setText("" + numberOrdered);
     }
 
+    private int calculatePrice(boolean addWhippeedCream, boolean addChocolate) {
+        int basePrice = 5;
+        if (addWhippeedCream) {
+            basePrice = basePrice + 1;
+        }
+        if (addChocolate) {
+            basePrice = basePrice + 2;
+        }
+        return (basePrice * quantity);
 
-//    private int calculatePrice (){
-//        if (hasWhippedCream()){
-//            int baseprice = 5 + 1;
-//            int price = baseprice * quantity;
-//            return price;
-//        }
-//    }
-
-    public void displayMessage(boolean addWhippedCream, boolean addChocolate) {
+    public void displayMessage(int calculatePrice, boolean addWhippedCream, boolean addChocolate) {
         String priceMessage = "Name:";
         priceMessage += "\nAdd whipped Cream?" + addWhippedCream;
         priceMessage += "\nAdd chocolate? " + addChocolate;
         priceMessage += "\nQuantity: " + quantity;
-        priceMessage += "\nTotal: $";
+        priceMessage += "\nTotal: $" + calculatePrice;
         priceMessage += "\nThank You";
         TextView orderSummaryTextView = findViewById(R.id.order_summary_text_view);
         orderSummaryTextView.setText(priceMessage);
