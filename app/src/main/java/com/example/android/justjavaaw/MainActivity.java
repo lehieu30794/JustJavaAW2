@@ -4,7 +4,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity {
     int quantity = 10;
@@ -27,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void submitOrder(View view) {
-        displayPrice(quantity * 5);
+        displayMessage();
     }
 
     public void displayQuantity(int numberOrdered) {
@@ -35,8 +38,28 @@ public class MainActivity extends AppCompatActivity {
         quantityTextView.setText("" + numberOrdered);
     }
 
-    public void displayPrice(int price) {
+    public boolean hasWhippedCream() {
+        CheckBox whippedCreamCheckBox = findViewById(R.id.whipped_cream_check_box);
+        whippedCreamCheckBox.isChecked();
+        return hasWhippedCream();
+    }
+
+//    private int calculatePrice (){
+//        if (hasWhippedCream()){
+//            int baseprice = 5 + 1;
+//            int price = baseprice * quantity;
+//            return price;
+//        }
+//    }
+
+    public void displayMessage() {
+        String priceMessage = "Name:";
+        priceMessage += "\nAdd whipped Cream?";
+        priceMessage += "\nAdd chocolate";
+        priceMessage += "\nQuantity" + quantity;
+        priceMessage += "\nTotal: $";
+        priceMessage += "\nThank You";
         TextView orderSummaryTextView = findViewById(R.id.order_summary_text_view);
-        orderSummaryTextView.setText("$" + price);
+        orderSummaryTextView.setText(priceMessage);
     }
 }

@@ -29,6 +29,7 @@
             android:textStyle="bold" />
 
         <CheckBox
+            android:id="@+id/whipped_cream_check_box"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
@@ -102,7 +103,7 @@
             android:text="$0"
             android:textAllCaps="true"
             android:textColor="#212121"
-            android:textSize="36sp" />
+            android:textSize="24sp" />
 
         <Button
             android:layout_width="wrap_content"
