@@ -11,7 +11,7 @@ import android.widget.TextView;
 import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity {
-    int quantity = 10;
+    int quantity = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,11 +21,17 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void decrement(View view) {
+        if (quantity == 0) {
+            return;
+        }
         quantity = quantity - 1;
         displayQuantity(quantity);
     }
 
     public void increment(View view) {
+        if (quantity == 10){
+            return;
+        }
         quantity = quantity + 1;
         displayQuantity(quantity);
     }
