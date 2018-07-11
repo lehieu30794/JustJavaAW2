@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void submitOrder(View view) {
+        
         CheckBox whippedCreamCheckBox = findViewById(R.id.whipped_cream_check_box);
         boolean hasWhippedCream = whippedCreamCheckBox.isChecked();
 
@@ -44,11 +45,6 @@ public class MainActivity extends AppCompatActivity {
         quantityTextView.setText("" + numberOrdered);
     }
 
-//    public boolean hasWhippedCream() {
-//        CheckBox whippedCreamCheckBox = findViewById(R.id.whipped_cream_check_box);
-//        whippedCreamCheckBox.isChecked();
-//        return hasWhippedCream();
-//    }
 
 //    private int calculatePrice (){
 //        if (hasWhippedCream()){
