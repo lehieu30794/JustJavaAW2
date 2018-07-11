@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
@@ -22,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void decrement(View view) {
         if (quantity == 0) {
+            Toast.makeText(this, "Cannot go below 0", Toast.LENGTH_SHORT).show();
             return;
         }
         quantity = quantity - 1;
@@ -29,7 +31,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void increment(View view) {
-        if (quantity == 10){
+        if (quantity == 10) {
+            Toast.makeText(this, "Cannot order more than 10", Toast.LENGTH_SHORT).show();
             return;
         }
         quantity = quantity + 1;
