@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.view.View;
 import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import org.w3c.dom.Text;
@@ -31,6 +32,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void submitOrder(View view) {
 
+        EditText nameField = findViewById(R.id.name_field);
+        Editable specifyName = nameField.getText();
+
         CheckBox whippedCreamCheckBox = findViewById(R.id.whipped_cream_check_box);
         boolean hasWhippedCream = whippedCreamCheckBox.isChecked();
 
@@ -39,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
 
         int calculatePrice = calculatePrice(hasWhippedCream, hasChocoLate);
 
-        displayMessage(calculatePrice, hasWhippedCream, hasChocoLate);
+        displayMessage(specifyName, calculatePrice, hasWhippedCream, hasChocoLate);
     }
 
     public void displayQuantity(int numberOrdered) {
@@ -59,8 +63,8 @@ public class MainActivity extends AppCompatActivity {
         return (basePrice * quantity);
     }
 
-    public void displayMessage(int calculatePrice, boolean addWhippedCream, boolean addChocolate) {
-        String priceMessage = "Name:";
+    public void displayMessage(Editable specifyName, int calculatePrice, boolean addWhippedCream, boolean addChocolate) {
+        String priceMessage = "Name: " + specifyName;
         priceMessage += "\nAdd whipped Cream?" + addWhippedCream;
         priceMessage += "\nAdd chocolate? " + addChocolate;
         priceMessage += "\nQuantity: " + quantity;
